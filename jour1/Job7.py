@@ -11,11 +11,11 @@ class Personnage:
   def gauche(self):
     self.x -= 1
   def position(self):
-    return self.x, self.y
+    print(f"x: {self.x}, y: {self.y}")
 
 coo = Personnage()
 
-print(coo.position())
+coo.position()
 coo.bas()
 coo.bas()
 coo.bas()
@@ -23,4 +23,4 @@ coo.droite()
 coo.droite()
 coo.droite()
 coo.droite()
-print(coo.position())
+coo.position()

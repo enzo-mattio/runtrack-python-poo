@@ -3,9 +3,9 @@ class Person:
     self.prenom = prénom
     self.nom = nom
   def SePresenter(self):
-    return self.prenom + " " + self.nom
+    print(f"Bonjour, je suis {self.prenom} {self.nom}")
 
 op2 = Person()
-print(op2.SePresenter())
+op2.SePresenter()
 op2 = Person("Jean", "Martin")
-print(op2.SePresenter())
+op2.SePresenter()

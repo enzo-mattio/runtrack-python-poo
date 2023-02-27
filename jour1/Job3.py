@@ -3,8 +3,10 @@ class Operation:
     self.nombre1 = nombre1
     self.nombre2 = nombre2
   def addition(self):
-    return self.nombre1 + self.nombre2
+    self.somme = self.nombre1 + self.nombre2
+    print(f"La somme de {self.nombre1} et {self.nombre2} est {self.somme}")
 
 op = Operation(5,6)
-addition = op.addition()
-print("L'addition de ", op.nombre1, " et ", op.nombre2, " est: ", addition)
+op.addition()
+
+

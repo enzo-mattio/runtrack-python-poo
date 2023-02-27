@@ -3,19 +3,19 @@ class Point:
     self.x = x
     self.y = y
   def afficherLesPoints(self):
-    return self.x, self.y
+    print(f"x: {self.x}, y: {self.y}")
   def afficherX(self):
-    return self.x
+    print(f"x: {self.x}")
   def afficherY(self):
-    return self.y
+    print(f"y: {self.y}")
   def ChangerX(self, x):
     self.x = x
   def ChangerY(self, y):
     self.y = y
 
 point=Point()
-print(point.afficherLesPoints())
-print(point.afficherX())
+point.afficherLesPoints()
+point.afficherX()
 point.ChangerX(100)
 point.ChangerY(100)
-print(point.afficherLesPoints())
+point.afficherLesPoints()

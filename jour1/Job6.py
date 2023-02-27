@@ -5,18 +5,18 @@ class Animal:
   def vieillir(self):
     self.age += 1
   def afficherAge(self):
-    return self.age
+    print(f"l'animal a {self.age} ans")
   def afficherNom(self):
-    return self.name
+    print(f"l'animal s'appelle {self.name}")
   def nommer(self, prénom):
     self.name = prénom
 
 vieilAnimal = Animal()
 
 print("Création d'un animal")
-print(f"l'animal a {vieilAnimal.afficherAge()} an")
+vieilAnimal.afficherAge()
 vieilAnimal.vieillir()
-print(f"l'animal a {vieilAnimal.afficherAge()} ans")
+vieilAnimal.afficherAge()
 vieilAnimal.nommer("Golemquirouelnamaspamousse")
-print(f"l'animal s'appelle {vieilAnimal.afficherNom()}")
+vieilAnimal.afficherNom()
 

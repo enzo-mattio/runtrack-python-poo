@@ -4,7 +4,7 @@ class cercle:
   def changerRayon(self,rayon):
     self.rayon = rayon
   def afficherinfo(self):
-    return self.rayon, self.circonférence(), self.aire(), self.diamètre()
+    print(f"Rayon: {self.rayon}, Circonférence:  {self.circonférence()}, Aire: {self.aire()}, Diamètre: {self.diamètre()} \n")
   def circonférence(self):
     return self.rayon*2*3.14
   def aire(self):
@@ -13,7 +13,7 @@ class cercle:
     return self.rayon*2
 
 figure = cercle(5)
-print(figure.afficherinfo())
+figure.afficherinfo()
 figure.changerRayon(10)
-print(figure.afficherinfo())
+figure.afficherinfo()
   
