@@ -20,7 +20,7 @@ et pensez à ajouter une méthode qui vérifie la santé de vos personnages ains
 méthode permettant de vérifier qui a gagné.
 '''
 import random
-
+import time
 class Personnage:
   def __init__(self, nom, vie):
     self.nom = nom
@@ -28,15 +28,16 @@ class Personnage:
 
   def attaquer(self, cible):
     attque = random.randint(1, 3)
+    coefattaque = random.uniform(0.8, 1.2)
     if attque == 1:
-      cible.vie -= 10 * random.uniform(0.8, 1.2)
-      print(f"\n{cible.nom} a subi 10 points de dégâts")
+      cible.vie -= 10 * coefattaque
+      print(f"\n{cible.nom} a subi", "%.2f" % (10 * coefattaque) ,"points de dégâts")
     if attque == 2:
-      self.vie += 10 * random.uniform(0.8, 1.2)
-      print(f"\n{self.nom} a gagné 10 points de vie")
+      self.vie += 10 * coefattaque
+      print(f"\n{self.nom} a gagné", "%.2f" % (10 * coefattaque) ,"points de vie")
     if attque == 3:
-      cible.vie -= 20 * random.uniform(0.9, 1.3)
-      print(f"\n{cible.nom} a subi une grosse attaque et perd 20 points de dégâts")
+      cible.vie -= 20 * coefattaque
+      print(f"\n{cible.nom} a subi une grosse attaque et perd", "%.2f" % (20 * coefattaque) ,"points de dégâts")
     
 class Jeu:
   def __init__(self):
@@ -61,12 +62,16 @@ class Jeu:
 
     while joueur.vie > 0 and ennemi.vie > 0:
       joueur.attaquer(ennemi)
+      time.sleep(0.5)
       ennemi.attaquer(joueur)
+
       print("\nVie de", joueur.nom + ":", ("%.2f" % joueur.vie), "Vie de", ennemi.nom + ":", ("%.2f" % ennemi.vie))
+      time.sleep(1)
+      
     if joueur.vie > 0:
-      print("\nLe joueur a gagné")
+      print("\n", joueur.nom, "a gagné")
     else:
-      print("\nL'ennemi a gagné")
+      print("\n", ennemi.nom, "a gagné")
       
       
 jeu = Jeu()
