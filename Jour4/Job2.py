@@ -23,7 +23,7 @@ class Eleve(Personne):
 # Creation de la classe professeur enfant de la classe Personne
 class professeur(Personne):
   def __init__(self, matiereEnseignee):
-    self.matiereEnseignee = matiereEnseignee
+    self.__matiereEnseignee = matiereEnseignee
 
   def enseigner(self):
     print('Le cours va commencer')
